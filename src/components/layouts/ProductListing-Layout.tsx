@@ -10,19 +10,6 @@ import FallbackLoading from "../FallbackLoading";
 import type { Product, ProductListingResponse } from "@/core/modals/product";
 import { toast, ToastContainer, Zoom } from "react-toastify";
 
-/* interface ProductListingResponse {
-  data: {
-    content: Product[]
-    metadata: {
-      last: true
-      numberOfElements: number
-      page: number
-      size: number
-      totalElements: number
-      totalPages: number
-    }
-  }
-} */
 
 const  ProductListingLayout = () => {
 
@@ -61,11 +48,6 @@ const  ProductListingLayout = () => {
     if (category && category !== 'All') {
       result = result.filter((p) => p.category.toLocaleLowerCase() === category.toLocaleLowerCase())
     }
-
-    // 3. Sort
-      // if (sortBy === 'price-low') result.sort((a, b) => a.price - b.price);
-      // if (sortBy === 'price-high') result.sort((a, b) => b.price - a.price);
-      // if (sortBy === 'rating') result.sort((a, b) => b.rating.rate - a.rating.rate);
 
     return result;
   };

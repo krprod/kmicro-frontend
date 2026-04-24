@@ -24,19 +24,6 @@ const AdminRoutes = () => {
                                 // theme="light"
                                 transition={Bounce}
                         />
-{/*         <Toaster position={"top-center"} toastOptions={
-                {classNames: {
-                description: '!text-red-900',
-                },
-                 duration: 3000,
-                 style: {
-                                background: '#fff',
-                                color: '#000',
-                 },
-                 closeButton: true,
-                 }
-        } 
-        /> */}
         <Outlet />
       </PrivateLayout>
     </AdminLayout>

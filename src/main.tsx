@@ -9,26 +9,6 @@ import FallbackLoading from "./components/FallbackLoading.tsx"
 import { store } from "./stores/store.ts"
 import { Provider } from "react-redux"
 
-// import { PersistGate } from "redux-persist/integration/react"
-
-/* const faro = initializeFaro({
-url: 'http://localhost:12347/collect', // Faro endpoint
-app: {
-name: 'faro',
-version: '1.0.0',
-},
-  instrumentations: [
-    ...getWebInstrumentations(),
-    new TracingInstrumentation(), // Connects frontend clicks to backend traces
-    new WebVitalsInstrumentation()
-  ],
-  webVitalsInstrumentation: {
-    reportAllChanges: true,
-  },
-});
-faro.api.pushLog(['React app initialized!']); */
-
-
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

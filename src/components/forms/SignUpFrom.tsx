@@ -17,14 +17,11 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import type { SignUpParamsT } from "@/core/modals/userT"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useAppSelector } from "@/stores/store"
-// import { setCredentials } from "@/stores/slice/authSlice"
 import { faArrowRightToBracket, faCartShopping, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
-// import usePrevLocation from "@/hooks/usePrevLocation"
 import { useApi } from "@/hooks/useApi"
 import { toast } from "react-toastify"
 import ConfirmationPage from "./ConfirmationPage"
 import type { ErrorResponseDTO } from "@/core/modals/apiRespose"
-
 
 const schema = yup.object({
         name: yup.string().required().min(6).max(30),
@@ -41,25 +38,22 @@ const SignUpFrom: React.FC = () => {
 
   const [open, setOpen] = useState(false);
   const [isMailSent, setIsMailSent] = useState(false);
-//   const dispatch = useAppDispatch();
+
   const navigate = useNavigate();
   const auth = useAppSelector((state)=> state.auth);
-//   const prevLocation = usePrevLocation();
+
   const { callApi } = useApi();
-//   const [loading, setLoading] = useState(false);
-//   const [csrf, setCsrf] = useState("");
+
   const submission: SubmitHandler<SignUpParamsT> = async ( data: SignUpParamsT) => {
 
         const singUpResponse = await callApi("POST", "/api/auth/register", 
                 { login_name: data.name, email: data.email, password: data.password },
-                // {withCredentials: true}
+                {withCredentials: true}
         );
 
         if(singUpResponse.success && singUpResponse.data){
                 // Registration successful, now attempt to log in
                 setIsMailSent(true);
-                        // dispatch(setCredentials({ user: userData.user, token: userData.token }));
-                        // navigate(prevLocation && prevLocation !== "/signin" ? prevLocation : '/products/all');
         }
 
         if(!singUpResponse.success){
@@ -67,9 +61,6 @@ const SignUpFrom: React.FC = () => {
                 toast.error(error?.errorMessage || "Registration failed. Please try again.", {autoClose: 5000,});
         }
         console.log("Registration Response:", singUpResponse);
-        // const user = { id:1, name: data.name, email: data.email, password: data.password, imageUrl:"https://w7.pngwing.com/pngs/404/51/png-transparent-unknown-user-avatar-profile-person-account-human-general-pack-icon.png" };
-        // dispatch(setCredentials({ user, token:"fakeToken" }));
-        //   navigate(prevLocation && prevLocation !== "/signin" ? prevLocation : '/products/all');
  }
 
  useEffect(()=>{
@@ -77,7 +68,6 @@ const SignUpFrom: React.FC = () => {
                 navigate('/products/all');
         }
          ;(
-                
                 async function checkAuth() {
                         const csrfCheck = await callApi("GET", "/api/auth/generate-csrf");
                         console.log("CSRF Check:", csrfCheck.data);

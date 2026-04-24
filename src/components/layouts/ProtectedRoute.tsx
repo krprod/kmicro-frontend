@@ -10,10 +10,7 @@ type ProtectedRouteProps = {
 };
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
-//     const isLoginToken = true; // Replace with actual authentication logic
-	// const isLoginToken = useSelector(
-	// 	(state: RootState) => state?.auth.user?.token
-	// );
+
         const navigate = useNavigate();
         const auth = useAppSelector((state)=> state.auth);
         const dispatch = useAppDispatch();

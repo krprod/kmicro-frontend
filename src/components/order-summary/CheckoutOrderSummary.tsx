@@ -4,10 +4,9 @@ import { useAppSelector } from "@/stores/store"
 import React from "react"
 // import { Link } from "react-router"
 import { Button } from "../ui/button"
+import type { CartItem } from "@/core/modals/cart";
 
 interface CheckoutOrderSummaryProps {
-//   cartItems: CartItem[]
-//   actionButton: React.ReactNode
         btnName: string;
         handleFn: ()  => void;
         path: string;
@@ -15,21 +14,10 @@ interface CheckoutOrderSummaryProps {
 }
 
 const CheckoutOrderSummary: React.FC<CheckoutOrderSummaryProps> = ({
-//   cartItems,
-//   actionButton,
 btnName, handleFn,
 checkoutItems,
 }: CheckoutOrderSummaryProps) => {
-/*   const subtotal = cartItems
-    .reduce((total, item) => total + item.product.price * item.quantity, 0)
-    .toFixed(2)
-  const tax = (parseFloat(subtotal) * 0.1).toFixed(2) // Assuming a fixed tax rate of 10%
-  const shippingCost = (cartItems.length > 0 ? 5.0 : 0).toFixed(2) // Flat shipping cost of $5 if there are
-  const total = (
-    parseFloat(subtotal) +
-    parseFloat(tax) +
-    parseFloat(shippingCost)
-  ).toFixed(2) */
+
 
   const cart = useAppSelector((state)=> state.cart);
 
@@ -38,9 +26,9 @@ checkoutItems,
       <h2 className="mb-4 text-2xl font-bold">Order Summary</h2>
 
       <div className="space-y-2 border-b pb-4">
-        {/* <ng-content select="[checkoutItems]" /> */}
+
         {checkoutItems &&
-          cart.cartItems.map((item) => (
+          cart.cartItems.map((item: CartItem) => (
             <div className="flex justify-between text-sm" key={item.product.id}>
               <span>
                 {item.product.name} x {item.quantity}
@@ -69,13 +57,11 @@ checkoutItems,
         </div>
       </div>
 
-      {/* <ng-content select="[actionButtons]" /> */}
-      {/* {actionButton} */}
-      {/* <Link to={path}> */}
+
         <Button className="mt-6 w-full py-3" onClick={handleFn}>
           {btnName}
         </Button>
-      {/* </Link> */}
+
     </div>
   )
 }

@@ -15,9 +15,6 @@ const CartItemList: React.FC<CartItemListProps> = ({cartItems}: CartItemListProp
     {
         cartItems && cartItems.map((item) => <ShowCartItemList item={item}  key={item.product.id}/>)
     }
-    {/* @for (item of store.cartItems(); track item.product.id) {
-      <app-show-cart-item [item]="item" />
-    } */}
   </div>
 </div>
   )

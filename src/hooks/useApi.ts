@@ -66,9 +66,8 @@ axiosInstance.interceptors.response.use(
 )
 
 export const useApi = () => {
+        
   const [loading, setLoading] = useState(false)
-
-//   const { loginToken } = useLoginData();
   const {token: loginToken} = useAppSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -124,20 +123,6 @@ export const useApi = () => {
         if (axios.isAxiosError(err)) {
           const axiosError = err as AxiosError<{ message?: string }>
 
-          // Check for CORS errors
-          /*       if (
-            axiosError.code === "ERR_NETWORK" ||
-            axiosError.message?.includes("CORS") ||
-            axiosError.message?.includes("Network Error") ||
-            (!axiosError.response && axiosError.request)
-          ) {
-            return {
-              error:
-                "CORS Error: Unable to connect to the server. The server may not allow cross-origin requests. Please check your network connection or contact support.",
-              success: false,
-              status: undefined,
-            };
-          } */
           console.log("EXIOS", {...axiosError})
 
           if(axiosError.response?.status === 401 || axiosError.response?.status === 402 || axiosError.response?.status === 403) {
@@ -170,7 +155,6 @@ export const useApi = () => {
       }
     },
     [loginToken, dispatch, navigate]
-    // [loginToken]
   )
 
   return { callApi, loading }

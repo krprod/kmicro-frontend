@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-/* interface DialogStore {
-  isOpen: boolean
-  openDialog: () => void
-  closeDialog: () => void
-} */
 interface sarkarSlice{
   isDailogOpen: boolean;
   refreshToggle: boolean;

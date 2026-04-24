@@ -39,7 +39,6 @@ const CustomSidebar: React.FC<ProductsProp> = ({products}: ProductsProp) => {
 
   return (
   <aside className="w-64 h-screen bg-white border-r border-gray-200 p-4 sticky top-0 pt-4 hidden md:block">
-      {/* <h2 className="text-xl font-bold mb-6 px-2 text-gray-800">Categories</h2> */}
       
       <nav className="space-y-1">
         {proCatFn().map((category: Category) => (

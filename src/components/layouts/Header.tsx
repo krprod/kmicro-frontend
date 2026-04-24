@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router';
 import HeaderActionPublic from './header-actions/HeaderActionPublic';
 import { Input } from '../ui/input';
-// import { Button } from '../ui/button';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
 import { setSearchQuery, setCategory } from '@/stores/slice/productSlice';
 
@@ -25,13 +23,8 @@ const Header : React.FC<HeaderProps> = ({showSearch}: HeaderProps) => {
           <Input type='text' name='searchQuery' className='hidden md:block' placeholder='Search Product By Name' onChange={(e) =>{
              dispatch(setSearchQuery(e.target.value));
              dispatch(setCategory("All")); 
-            // console.log(e.target.value)
           }}/>
-{/*           <Button  onClick={()=>{
-                        // distpatch(setSearchQuery()) 
-                      }}>
-            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
-          </Button> */}
+
         </div>
         }
         

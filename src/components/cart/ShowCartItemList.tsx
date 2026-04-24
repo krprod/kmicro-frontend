@@ -20,7 +20,7 @@ const ShowCartItemList: React.FC<ShowCartItemListProps> = ({item}: ShowCartItemL
 
   return (
     <div className="grid grid-cols-[3fr_1fr_1fr] gap-4">
-  {/* <div className="flex items-center gap-4" [routerLink]="productLink()"> */}
+
   <Link to={`/product/${item.product.id}`}>
   <div className="flex items-center gap-4" >
     <img src={item.product.image} alt={item.product.name} className="w-24 h-24 object-cover rounded-lg"/>

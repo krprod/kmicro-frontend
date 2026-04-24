@@ -9,7 +9,6 @@ import {
   transformAllCartItemForApi,
   transformCartItemsForProductApi,
   type CartItemApi,
-//   type productQtyCheck,
   type productQtyCheckResponse,
 } from "@/core/modals/cart"
 import { useNavigate } from "react-router"
@@ -18,7 +17,6 @@ import { useApi } from "@/hooks/useApi"
 import { useState } from "react"
 import FullScreenLoader from "@/components/FullScreenLoader"
 import { toast as Sonnu} from "sonner"
-// import { API_ORDER_CART } from "@/common/constants"
 
 const Cart: React.FC = () => {
   const cart = useAppSelector((state) => state.cart)
@@ -53,18 +51,14 @@ const Cart: React.FC = () => {
                 if(productResponse.success){
                         const productData = productResponse.data as productQtyCheckResponse;
                         if(productData.errors.length !== 0){
-                                       /*  const errorMap: string[] =  []
-                                        productData.errors.map((p)=>{
-                                                //<p key={p.id}>{`Error: ${p.message} -- for Product Id: ${p.id}`}</p>
-                                                errorMap.push(`Error: ${p.message} -- for Product Id: ${p.id} \n`);
-                                        }); */
+             
                                          const errorMap = productData.errors.map((p)=>{
                                                 return <p key={p.id} className="text-red-500 font-semibold text-md">{`${p.message}`}</p>
-                                                // errorMap.push(`Error: ${p.message} -- for Product Id: ${p.id} \n`);
+                                                
                                         });
                                         console.log(errorMap);
                                         Sonnu("Issue with Product",{description: errorMap, position: "top-center" });
-                                        // toast(errorMap);
+                                      
                                         setRequested(false);
                                         return;
                         }

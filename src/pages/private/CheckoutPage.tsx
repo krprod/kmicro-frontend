@@ -41,14 +41,11 @@ const CheckoutPage: React.FC = () => {
     defaultValues: { paymentOption: "paypal" },
   });
 
-// const { control: paymentControl } = useForm({});
-
   const auth = useAppSelector((state) => state.auth);
   const navigate = useNavigate();
   const {loading, callApi} = useApi();
   const dispatch = useAppDispatch();
 
-  // console.log("WT:", watch);  yup.InferType<typeof schema>
   const submission: SubmitHandler<CheckoutFormFieldType> = (data: CheckoutFormFieldType) => {
     ;(async function () {
       if (auth?.user && auth.token) {

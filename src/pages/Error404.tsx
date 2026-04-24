@@ -10,9 +10,6 @@ const Error404 = ({message}: ErrorProps) => {
 	return (
 		<section>
 			<div className="flex min-h-screen w-screen flex-col items-center justify-center gap-y-5">
-				{/* <h1 className="bg-gradient-to-r from-purple-600 via-purple-600 to-pink-400 text-transparent bg-clip-text">
-					hello world
-				</h1> */}
 
 				<h1 className="bg-primary  bg-clip-text text-9xl font-bold text-transparent">
 					404

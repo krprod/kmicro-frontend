@@ -21,10 +21,7 @@ type FieldValues1 = {
 interface PaymentOptionsProps{
  controller:  Control<FieldValues1>
 }
-// interface PaymentOptionsProps<T extends FieldValues>{
-//  regi?: UseFormRegister<T>;
-//  conta: Control<T>
-// }
+
 const PaymentOptions:React.FC<PaymentOptionsProps> = ({controller}: PaymentOptionsProps) => {
   return (
     <div className={`${AppViewCss} p-6`}>
@@ -32,34 +29,6 @@ const PaymentOptions:React.FC<PaymentOptionsProps> = ({controller}: PaymentOptio
         <FontAwesomeIcon icon={faCreditCard} />
         Payment Options
       </h2>
-     {/*  <div>
-        <RadioGroup defaultValue="paypal" className='flex items-center gap-3'>
-              <div className='flex items-center gap-3'>
-            <RadioGroupItem value="stripe" id="stripe"  {...regi("paymentOption", {required: true})}/>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
-              alt="Stripe"
-              className="h-6"
-            />
-          </div>
-          <div className='flex items-center gap-3'>
-            <RadioGroupItem value="paypal" id="paypal"  {...regi("paymentOption", {required: true})}/>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/f/f9/PayPal-Logo-2022.png"
-              alt="PayPal"
-              className="h-14"
-            />
-          </div>
-          <div className='flex items-center gap-3'>
-            <RadioGroupItem value="paytm" id="paytm"  {...regi("paymentOption", {required: true})}/>
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/24/Paytm_Logo_%28standalone%29.svg"
-              alt="Paytm"
-              // className="h-6"
-            />
-          </div>
-        </RadioGroup>
-      </div> */}
       <div>
 <Controller
       control={controller}

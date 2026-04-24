@@ -17,8 +17,6 @@ import { useApi } from '@/hooks/useApi';
 import FullScreenLoader from '../FullScreenLoader';
 import { toast } from 'react-toastify';
 import type { ErrorResponseDTO } from '@/core/modals/apiRespose';
-// import { setAdminCredentials } from '@/stores/slice/authSlice';
-// import conf from '@/common/config';
 import {  setCredentials } from '@/stores/slice/authSlice';
 
 const schema = yup.object({
@@ -52,7 +50,7 @@ const SignInForm: React.FC = () => {
                         if(response.success){
 
                                 const loginResponse = response.data as LoginResponse;
-                                // setTimeout(()=>{
+
                                         if(loginResponse && loginResponse.user){
                                                 const userData = {
                                                         id: loginResponse.user.id,
@@ -61,15 +59,9 @@ const SignInForm: React.FC = () => {
                                                         contact: loginResponse.user?.contact,
                                                         imageUrl: loginResponse.user?.avtar
                                                 };
-                                              
-                                        //       if(  conf.adminUserEmail !=='' && conf.adminUserEmail === userData.email){
-                                                // dispatch(setAdminCredentials({user: userData, token: loginResponse.token}))
-                                        //       }else{
                                                 dispatch(setCredentials({user: userData, token: loginResponse.token}))
-                                        //       } 
                                                 toast.success("Logged in successfully!");
                                                 console.log("LoginSuccess", response);
-                                                // navigate(prevLocation && prevLocation !== "/signup" ? prevLocation : '/products/all');
                                                 navigate(prevLocation && prevLocation !== "/signup" ?"/user/profile": '/products/all');
                                         }
                                         if(!response.success){
@@ -92,11 +84,7 @@ const SignInForm: React.FC = () => {
                 }finally{
                         // setLoading(false);
                 }
-                // setLoading(false);
-                //   const user = { id:1, name:"fakeName", email: data.email, password: data.password, imageUrl:"https://w7.pngwing.com/pngs/404/51/png-transparent-unknown-user-avatar-profile-person-account-human-general-pack-icon.png" };
-                //   dispatch(setCredentials({ user, token:"fakeToken" }));
-                //    navigate(prevLocation && prevLocation !== "/signup" ? prevLocation : '/products/all');
-                console.log("Form Data:", data);
+                // console.log("Form Data:", data);
            }
           
          useEffect(()=>{

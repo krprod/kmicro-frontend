@@ -4,11 +4,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-// import { useAppSelector } from "@/stores/store";
-// import { useApi } from "@/hooks/useApi";
-// import { SelectField } from "./SelectField";
-// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
-
 export type ProductFormValues = {
   name: string;
   price: number;
@@ -83,37 +78,6 @@ const AdminProductForm: React.FC<AdminProductFormProps> = ({
     resolver: yupResolver(schema),
     defaultValues: initialValues,
   });
-
-//   const [selectedCategory, setSelectedCategory] = useState("");
-
-//   const handleOnChange = (value: string)=>{
-//         console.log("Selected category:", value);
-//         setSelectedCategory(value);
-//   }
-//   const adminCategories = useAppSelector((state) => state.admin.categories);
-//   const {callApi} = useApi();
-
-/*   const fetachCategories = async () => {
-        if(adminCategories.length === 0){
-                try {
-                        const res = await callApi("GET", "/api/category");
-                        if (res.success) {
-                                console.log("Fetched categories:", res.data);
-                                // const data = await res.json();
-                                // Assuming the response is an array of category names
-                                // You might need to adjust this based on your actual API response structure
-                                // For example, if the response is { categories: string[] }, you would use data.categories
-                                // Here we assume it's directly an array of strings
-                                // dispatch(setCategories(data));
-                        } else {
-                                console.error("Failed to fetch categories");
-                        }
-                } catch (error) {
-                        console.error("Error fetching categories:", error);
-                }
-        }
-  }; */
-
   useEffect(() => {
     reset(initialValues);
 //     fetachCategories();
@@ -156,25 +120,6 @@ const AdminProductForm: React.FC<AdminProductFormProps> = ({
                 }
         </span>
 
-         {/* <Select onValueChange={(e) =>handleOnChange(e)}>
-            <SelectTrigger>
-              <SelectValue placeholder={"Select Category..."} />
-            </SelectTrigger>
-            <SelectContent position="popper">
-              { categories.map((opt) => (
-                <SelectItem key={opt.label} value={opt.label}>
-                  {opt.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select> */}
-        {/* <SelectField 
-          control={control}
-          name="category"
-          label=""
-          placeholder="Select Category..."
-          options={categories}
-        /> */}
         {errors.category ? (
           <span className="text-xs text-red-600">{String(errors.category.message)}</span>
         ) : null}

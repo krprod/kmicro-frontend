@@ -45,11 +45,6 @@ export default function UserHeaderAction({ user }: UserHeaderActionProps) {
                                 <span><FontAwesomeIcon icon={faBoxesPacking} className="mr-2" />Orders</span>
                         </DropdownMenuItem>
                 </NavLink>
-                {/* <NavLink to="/user/address" className={({ isActive }) => isActive ? "font-bold text-primary" : ""}>
-                        <DropdownMenuItem>
-                                <span><FontAwesomeIcon icon={faAddressBook} className="mr-2" />Address</span>
-                        </DropdownMenuItem>
-                </NavLink> */}
                 <DropdownMenuSeparator />
                 <Link to="/logout">
                         <DropdownMenuItem variant="destructive">
@@ -57,12 +52,6 @@ export default function UserHeaderAction({ user }: UserHeaderActionProps) {
                         </DropdownMenuItem>
                 </Link>
               </DropdownMenuGroup>
-
-              {/*  <DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-            </DropdownMenuGroup> */}
             </DropdownMenuContent>
           </DropdownMenu>
         </button>

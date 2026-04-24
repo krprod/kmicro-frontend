@@ -1,4 +1,4 @@
-import React, { type ReactNode } from 'react'
+import React from 'react'
 import { Checkbox } from "@/components/ui/checkbox"
 import {
   Sidebar,
@@ -12,9 +12,9 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar"
 
-interface ProductListingSideNavProps{
-    children: ReactNode
-}
+// interface ProductListingSideNavProps{
+//     children: ReactNode
+// }
 
 // Mock Data Structure
 const CATEGORIES = [
@@ -30,7 +30,7 @@ interface CategorySidebarProps{
   headerHeight: number
 }
 
-const ProductListingSideNav: React.FC<CategorySidebarProps> = ({ selectedIds, onToggle, headerHeight, ...props }: CategorySidebarProps) => 
+const ProductListingSideNav: React.FC<CategorySidebarProps> = ({ selectedIds, onToggle }: CategorySidebarProps) => 
 {
   return (
       <Sidebar  collapsible="icon">

@@ -30,11 +30,6 @@ const ShippingForm: React.FC<ShippingFormProps<FieldValues>> = ({regi, err}: Shi
         Shipping Information
       </h2>
 
-      {/*   <form
-    className="grid grid-cols-1 lg:grid-cols-2 gap-4"
-    // [formGroup]="shippingForm"
-    // (ngSubmit)="submitShippingInfo()"
-  > */}
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         {/* <mat-form-field> */}
         <div>

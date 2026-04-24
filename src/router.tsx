@@ -1,9 +1,6 @@
-// import { ToastContainer, Zoom } from "react-toastify"
 import { createBrowserRouter } from "react-router"
 import { lazy } from "react"
-// import ProductListing from "./pages/public/product-view/ProductListing";
 import SingleProduct from "./pages/public/products/SingleProduct"
-// import SidebarLayoutRoute from "./components/layouts/ProductListing-Layout";
 import ProductListingLayout from "./components/layouts/ProductListing-Layout"
 import WishList from "./pages/public/WishList"
 import Cart from "./pages/public/Cart"
@@ -20,27 +17,12 @@ import PublicRoutes from "./components/routes/PublicRoutes"
 import AdminRoutes from "./components/routes/AdminRoutes"
 import AdminOrders from "./pages/admin/orders/AdminOrders"
 import { AdminProductListing } from "./pages/admin/products/AdminProducts"
-// import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 import Admin from "./pages/admin/Admin"
 import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
-// import { withFaroRouterInstrumentation } from "@grafana/faro-react"
 
 //component imports
 const Unauthorized = lazy(() => import("./pages/Unauthorized"))
 const Error404 = lazy(() => import("./pages/Error404"))
-
-
-
-/* const SidebarRoutes = () => {
-  return (
-    <SidebarLayoutRoute>
-      <ToastContainer />
-      <Outlet />
-    </SidebarLayoutRoute>
-  );
-}; */
-
-
 
 const  browserRouter = createBrowserRouter([
   {
@@ -141,15 +123,12 @@ const  browserRouter = createBrowserRouter([
       },
     ],
   },
-  // ❌ Unauthorized and 404 Pages
   { path: "/unauthorized", element: <Unauthorized /> },
   {
     path: "*",
     element: <Error404 message="" />,
   },
 ])
-
-// const router = withFaroRouterInstrumentation(browserRouter);
 const router = browserRouter;
 
 export default router

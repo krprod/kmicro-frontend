@@ -18,7 +18,7 @@ function SingleProduct() {
     
     useEffect(() => {
         
-        const product  = products.find((p) => p.id === parseInt(params.id || '0', 10));
+        const product  = products.find((p: Product) => p.id === parseInt(params.id || '0', 10));
         async function fetchProductDetails() {
             if (!product && params.id) {
                 try {
@@ -43,7 +43,6 @@ function SingleProduct() {
   return (
   currentProduct ?
      <div className="mx-auto max-w-300 py-6">
-         {/* NEED TO CREATE <app-back-button class="mb-6" [navigateTo]="backRoute()">Continue Shopping</app-back-button> */}
          <BackButton text="Back To Shopping" path="/products" > 
          <FontAwesomeIcon icon={faArrowLeft} />
          </BackButton>

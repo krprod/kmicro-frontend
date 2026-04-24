@@ -12,10 +12,7 @@ import QtySelector from "@/components/cart/QtySelector"
 import { useDispatch } from "react-redux"
 import { addToCart } from "@/stores/slice/cartSlice"
 import { useState } from "react"
-// import { useAppSelector } from "@/stores/store"
 import { toast } from "react-toastify"
-// import { useAddToCartApiMutation } from "@/stores/api/CartApi"
-// import { transformCartForApi } from "@/core/modals/cart"
 
 interface SingleProductProps {
   product: Product
@@ -24,33 +21,6 @@ interface SingleProductProps {
 function SingleProductInfo({ product }: SingleProductProps) {
   const dispatch = useDispatch();
   const [qty, setQty] = useState(1);
-//   const [addToCartApi, result] = useAddToCartApiMutation()
-  /*  const cartItems = useAppSelector((state)=> state.cart.cartItems);
-  const ProductIndex = cartItems.findIndex((item) => item.product.id === product.id);  
-
-      if (ProductIndex !== -1) {
-            // setQty(cartItems[ProductIndex].quantity);
-            console.log("qty", cartItems[ProductIndex].quantity);
-      } */
-
-/*   const handleAddToCart = (product: Product, quantity: number) => {
-    addToCartApi(transformCartForApi(product, quantity, 100))
-    console.log(result)
-    // dispatch(addToCart({ product, quantity: qty }));
-  } */
-
-/*   useEffect(() => {
-    if (result.isSuccess) {
-      console.log(result)
-      dispatch(addToCart({ product, quantity: qty }))
-      toast.done("Added To Cart")
-    }
-    if (result.isError) {
-      toast.error("Error Occurred")
-      result.reset()
-      console.log(result)
-    }
-  }, [result, addToCartApi, dispatch]) */
 
   return (
     <>
@@ -70,8 +40,7 @@ function SingleProductInfo({ product }: SingleProductProps) {
       </p>
       <div className="mb-3 flex items-center gap-2 pt-4">
         <span className="font-semibold">Quantity:</span>
-        {/* <app-qty-selector [quantity]="quantity()" (qtyUpdated)="quantity.set($event)" /> */}
-        {/* <QtySelector qty={1}/> */}
+
         <QtySelector
           quantity={qty}
           onIncrement={() => {

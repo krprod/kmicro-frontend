@@ -1,6 +1,5 @@
 import type { OrderItemsApi } from "@/core/modals/order";
 import React from 'react'
-import { AccordionContent } from "../ui/accordion";
 
 interface OrderItemProps {
         item: OrderItemsApi;
@@ -23,8 +22,7 @@ const OrderItem: React.FC<OrderItemProps> = ({ item }: OrderItemProps) => (
       <p className="mt-1 text-sm text-gray-500">
         Quantity: <span className="font-medium">{item.quantity}x = USD {item.price}</span>
       </p>
-  {/*     <p className="text-sm text-gray-500">Color: {item.color}</p>
-      <p className="text-sm text-gray-500">Size: {item.size}</p> */}
+
     </div>
   </div>
 );
