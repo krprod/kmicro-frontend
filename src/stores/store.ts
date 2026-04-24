@@ -4,7 +4,6 @@ import { useDispatch, useSelector, type TypedUseSelectorHook } from 'react-redux
 // import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import rootReducer from "./rootReducer";
 // import storage from "redux-persist/lib/storage";
-import cartApi  from "./api/CartApi";
 // import productApi2 from "./api/productApi2";
 // import productListSlice from "./slice/productListingSlice";
 
@@ -25,7 +24,7 @@ export const store = configureStore({
     //     // Ignore redux-persist actions that use non-serializable values
     //     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
     //   },
-        }).concat([cartApi.middleware]), //.concat([productApi.middleware, productApi2.middleware]
+        }).concat(), //.concat([productApi.middleware, productApi2.middleware]
 });
 
 setupListeners(store.dispatch);

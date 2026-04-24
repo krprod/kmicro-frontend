@@ -10,7 +10,6 @@ import orderReducer from "../stores/slice/orderSlice";
 import sarkariReducer from "../stores/slice/sarkariSlice";
 import adminReducer from "../stores/slice/adminSlice";
 // import { productApi } from "./api/ProductApi";
-import cartApi from "./api/CartApi";
 // import productListingSliceReducer from "../stores/slice/productListingSlice";
 
 
@@ -23,7 +22,7 @@ const appReducer = combineReducers({
   orders: orderReducer,
   sarkar: sarkariReducer,
   admin: adminReducer,
-  [cartApi.reducerPath]: cartApi.reducer,
+//   [cartApi.reducerPath]: cartApi.reducer,
   // productListing: productListingSliceReducer,
   // [productApi.reducerPath]: productApi.reducer,
   // [productApi2.reducerPath]: productApi2.reducer,
