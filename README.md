@@ -62,13 +62,22 @@ npm run typecheck  # TS check
 ## 📁 Structure
 
 ```
-src/
- ├── components/
- ├── features/
- ├── store/
- ├── services/
- ├── routes/
- └── utils/
+kmicro-frontend/
+│
+├── src/
+│   ├── components/      # Reusable UI components
+│   ├── features/        # Feature-based modules (micro-frontend ready)
+│   ├── store/           # Redux store setup
+│   ├── hooks/           # Custom hooks
+│   ├── services/        # API layer (Axios)
+│   ├── utils/           # Helper functions
+│   ├── routes/          # Routing config
+│   └── main.tsx         # App entry point
+│
+├── public/
+├── index.html
+├── vite.config.ts
+└── package.json
 ```
 
 ---
