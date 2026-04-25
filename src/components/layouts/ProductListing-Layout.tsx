@@ -9,6 +9,7 @@ import { setProducts } from "@/stores/slice/productSlice";
 import FallbackLoading from "../FallbackLoading";
 import type { Product, ProductListingResponse } from "@/core/modals/product";
 import { toast, ToastContainer, Zoom } from "react-toastify";
+import productData from "@/common/product-data";
 
 
 const  ProductListingLayout = () => {
@@ -20,18 +21,21 @@ const  ProductListingLayout = () => {
    
     const  getProducts = async() => {
        const response = await callApi<ProductListingResponse>( 'GET', '/api/products/paginated?page=1&size=50' );
+       const products : Product[] = [];
        if(!response.success){
-                toast.error('Something went wrong');
+                toast.error('Something went wrong, Fetching defualt products');
                 console.log(response);
+                products.push(...productData);
        }
-       const products = response?.data?.content as Product[] || [];
+       if(response && response.data && response.data.content){
+        products.push(...response.data.content);
+       }
         if(products && products.length > 0){
                 setLocalProducts(products);
                 dispatch(setProducts(products));
         }else{
                 toast.error("Products Not Found");
         }
-      
    }
 
   const filtering = (productList : Product[], category: string, searchQuery: string) =>{
