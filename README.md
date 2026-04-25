@@ -3,8 +3,10 @@
 Modern React app built with **Vite + TypeScript + TailwindCSS + Redux Toolkit + RBAC**.  
 Designed for scalable and micro-frontend-ready architecture.
 
-Vercel URL: kmicro-frontend.vercel.app
-Local Container: app.bloodshot.in
+Vercel URL → [http://kmicro-frontend.vercel.app](https://kmicro-frontend.vercel.app/)
+
+Local Container → [http://app.bloodshot.in](https://app.bloodshot.in/)
+
 ---
 
 ## ⚡ Tech Stack
