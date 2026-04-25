@@ -66,8 +66,8 @@ const  ProductListingLayout = () => {
    <>
       <Header showSearch={true}/>
       <ToastContainer 
-      stacked
-       className="mt-10"
+                stacked
+         className="mt-10"
           position="top-center"
           autoClose={200}
           hideProgressBar
@@ -78,7 +78,7 @@ const  ProductListingLayout = () => {
           draggable
           pauseOnHover={false}
           // theme="light"
-          transition={Zoom}
+                transition={Zoom}
       />
        {
         loading ? <FallbackLoading /> :  

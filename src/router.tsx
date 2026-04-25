@@ -1,28 +1,51 @@
 import { createBrowserRouter } from "react-router"
 import { lazy } from "react"
-import SingleProduct from "./pages/public/products/SingleProduct"
-import ProductListingLayout from "./components/layouts/ProductListing-Layout"
-import WishList from "./pages/public/WishList"
-import Cart from "./pages/public/Cart"
-import CheckoutPage from "./pages/private/CheckoutPage"
-import OrderSuccess from "./pages/private/OrderSuccess"
-import SignUpFrom from "./components/forms/SignUpFrom"
-import SignInForm from "./components/forms/SignInForm"
-import Logout from "./components/Logout"
-import Profile from "./pages/user-pages/Profile"
-import Orders from "./pages/user-pages/Orders"
-import EmailVerification from "./components/forms/EmailVerification"
+// import SingleProduct from "./pages/public/products/SingleProduct"
+// import ProductListingLayout from "./components/layouts/ProductListing-Layout"
+// import WishList from "./pages/public/WishList"
+// import Cart from "./pages/public/Cart"
+// import CheckoutPage from "./pages/private/CheckoutPage"
+// import OrderSuccess from "./pages/private/OrderSuccess"
+// import SignUpFrom from "./components/forms/SignUpFrom"
+// import SignInForm from "./components/forms/SignInForm"
+// import Logout from "./components/Logout"
+// import Profile from "./pages/user-pages/Profile"
+// import Orders from "./pages/user-pages/Orders"
+// import EmailVerification from "./components/forms/EmailVerification"
 import PrivateRoutes from "./components/routes/PrivateRoutes"
 import PublicRoutes from "./components/routes/PublicRoutes"
 import AdminRoutes from "./components/routes/AdminRoutes"
-import AdminOrders from "./pages/admin/orders/AdminOrders"
-import { AdminProductListing } from "./pages/admin/products/AdminProducts"
-import Admin from "./pages/admin/Admin"
-import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
+// import AdminOrders from "./pages/admin/orders/AdminOrders"
+// import { AdminProductListing } from "./pages/admin/products/AdminProducts"
+// import Admin from "./pages/admin/Admin"
+// import AdminDashboard from "./pages/admin/dashboard/AdminDashboard"
 
 //component imports
 const Unauthorized = lazy(() => import("./pages/Unauthorized"))
 const Error404 = lazy(() => import("./pages/Error404"))
+// 1. Convert these to lazy imports
+const SingleProduct = lazy(() => import("./pages/public/products/SingleProduct"))
+const ProductListingLayout = lazy(() => import("./components/layouts/ProductListing-Layout"))
+const WishList = lazy(() => import("./pages/public/WishList"))
+const Cart = lazy(() => import("./pages/public/Cart"))
+const CheckoutPage = lazy(() => import("./pages/private/CheckoutPage"))
+const OrderSuccess = lazy(() => import("./pages/private/OrderSuccess"))
+const SignUpFrom = lazy(() => import("./components/forms/SignUpFrom"))
+const SignInForm = lazy(() => import("./components/forms/SignInForm"))
+const Logout = lazy(() => import("./components/Logout"))
+const Profile = lazy(() => import("./pages/user-pages/Profile"))
+const Orders = lazy(() => import("./pages/user-pages/Orders"))
+const EmailVerification = lazy(() => import("./components/forms/EmailVerification")) //import EmailVerification from "./components/forms/EmailVerification"
+const Admin = lazy(() => import("./pages/admin/Admin"))
+const AdminOrders = lazy(() => import("./pages/admin/orders/AdminOrders"))
+const AdminProductListing = lazy(() => import("./pages/admin/products/AdminProducts").then(module => ({ default: module.AdminProductListing })))
+const AdminDashboard = lazy(() => import("./pages/admin/dashboard/AdminDashboard"))
+
+// Keep logical wrappers static (they are small and needed immediately)
+// import PrivateRoutes from "./components/routes/PrivateRoutes"
+// import PublicRoutes from "./components/routes/PublicRoutes"
+// import AdminRoutes from "./components/routes/AdminRoutes"
+// import Logout from '../../kmicroApp2/src/components/Logout';
 
 const  browserRouter = createBrowserRouter([
   {
