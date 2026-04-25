@@ -1,4 +1,5 @@
 # 🚀 kmicro-frontend
+![GitHub Repo Size](https://img.shields.io/github/repo-size/krprod/kmicro-frontend) ![License](https://img.shields.io/github/license/krprod/kmicro-frontend)  ![Visitors](https://komarev.com/ghpvc/?username=krprod&label=Visitor&base=1000&color=brightgreen)
 
 Modern React app built with **Vite + TypeScript + TailwindCSS + Redux Toolkit + RBAC**.  
 Designed for scalable and micro-frontend-ready architecture.
