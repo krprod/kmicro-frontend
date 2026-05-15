@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://api.bloodshot.in/api/:path*"
+      "destination": "https://api.krishnakantverma.com/api/:path*"
     },
     {
       "source": "/(.*)",
